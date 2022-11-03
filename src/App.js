@@ -1,16 +1,21 @@
-const Header = (props) => {
+const Header = ({ name }) => {
   return (
     <div>
-      <h1>Welcome {props.name}</h1>
+      <h1>Welcome {name}</h1>
     </div>
   );
 };
 
-const App = () => {
+const App = ({ products }) => {
   return (
     <div>
-      <Header name="Aseem" />
-
+      <Header name="Admin" />
+      <h2>Products</h2>
+      <ul>
+        {products.map((product) => (
+          <li>{product.name}</li>
+        ))}
+      </ul>
       <p>hehe</p>
     </div>
   );
